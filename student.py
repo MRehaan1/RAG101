@@ -1,6 +1,6 @@
 class Student:
     student_count = 0 #class variable
-    valid_grades = ["A", "B", "C", "D", "F"]
+    valid_grades = ["A+", "A", "B+", "B", "C+", "C", "D", "F"]
 
     def __init__(self, name, age, grade,ID):
         self.name = name

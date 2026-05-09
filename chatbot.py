@@ -5,8 +5,13 @@ from student import Student
 
 
 class Chatbot:
-    def __init__(self):
+    def __init__(self, engine=None):
         self.messages = []
+        self.engine = engine
+
+    def ask(self, session_id: str, question: str) -> dict:
+        """Delegate to the injected RAG engine. Returns {'answer': str, 'docs': list}."""
+        return self.engine.answer(session_id, question)
 
     # --- AUTH ---
     def login(self, email: str, password: str):
